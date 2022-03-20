@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+  font-family: 'Noto Sans', sans-serif !important;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --primary:#3E3E3E;
+  --secondary: #587FFF;
+  --grey:#CFCFCF;
+  --darkgrey:#6F6F6F;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bg-primary{
+  background: var(--primary) !important;
+}
+.font-primary{
+  color: var(--primary) !important;
+}
+.font-secondary{
+  color: var(--secondary);
+}
+.font-darkgrey{
+  color: var(--darkgrey);
+}
+.outline-primary{
+  outline-color: var(--primary);
+}
+.border-primary{
+  border-color: var(--primary) !important;
+}
+.border-grey{
+  border-color: var(--grey) !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input[type="checkbox"]  {
+  /* display: none; */
+  appearance: none;
 }
 
-.App-link {
-  color: #61dafb;
+
+::-webkit-input-placeholder { /* Edge */
+  color: var(--primary) !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--primary) !important;
+}
+
+::placeholder {
+  color: var(--primary) !important;
+}
+
+#loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgb(26 108 97 / 56%);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  position: fixed;
+  top: 50%;
+  left: 45%;
+}
+
+@keyframes spin {
   to {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
   }
 }
